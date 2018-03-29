@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:title="選單">
+        <item
+            android:id="@+id/sidebar_main"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/title_main" />
+        <item
+            android:id="@+id/sidebar_course_alert"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/title_course_alert" />
+        <item
+            android:id="@+id/sidebar_course_book"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/title_course_book" />
+        <item
+            android:id="@+id/sidebar_course_search"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/title_course_search" />
+    </group>
+
+    <item android:title="關於我們">
+        <menu>
+            <item
+                android:id="@+id/sidebar_donate"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/title_donate" />
+            <item
+                android:id="@+id/sidebar_qa"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/title_qa" />
+            <item
+                android:id="@+id/sidebar_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+        </menu>
+    </item>
+
+</menu>

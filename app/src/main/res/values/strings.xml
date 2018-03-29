@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">逢甲餘額提醒</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_main">首頁</string>
+    <string name="title_course_alert">餘額提醒</string>
+    <string name="title_course_book">選課秘笈</string>
+    <string name="title_course_search">課程查詢</string>
+    <string name="title_donate">donate</string>
+    <string name="title_qa">問題回報</string>
+    <string name="action_settings">設定</string>
+    <string name="title_activity_donate">DonateActivity</string>
+</resources>
