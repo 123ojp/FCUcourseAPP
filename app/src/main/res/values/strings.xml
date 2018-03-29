@@ -11,4 +11,8 @@
     <string name="title_qa">問題回報</string>
     <string name="action_settings">設定</string>
     <string name="title_activity_donate">DonateActivity</string>
+    <string name="title_activity_check">CheckActivity</string>
+    <string name="title_activity_book">BookActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_qa">QaActivity</string>
 </resources>
