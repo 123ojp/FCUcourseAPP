@@ -2,6 +2,7 @@ package com.example.o123ojp.appprojet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class SearchActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -20,6 +23,10 @@ public class SearchActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,5 +119,30 @@ public class SearchActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //自訂一開始
+    public void searchcourse(View view) {
+        TextView sub_name_text=(TextView) findViewById(R.id.sub_name_text);
+        TextView open_quota_text=(TextView) findViewById(R.id.open_quota_text);
+        TextView real_quota_text=(TextView) findViewById(R.id.real_quota_text);
+        TextView search_error_text=(TextView) findViewById(R.id.search_error_text);
+        EditText editTextMessage;
+        editTextMessage = (EditText) findViewById(R.id.course_input);
+        String course = editTextMessage.getText().toString();
+        if (course.length() == 4) {
+            Cheakcourse new_course = new Cheakcourse(course);
+            if(new_course.getIs_error()){
+                search_error_text.setText(new_course.getError_text());
+            } else {
+                sub_name_text.setText(new_course.getSub_name());
+                open_quota_text.setText(new_course.getOpen_quota());
+                real_quota_text.setText(new_course.getReal_quota());
+                search_error_text.setText("NULL");
+            }
+
+        } else {
+
+        }
     }
 }
