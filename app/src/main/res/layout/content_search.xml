@@ -129,27 +129,7 @@
                 android:layout_weight="1"
                 android:text="NULL" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/search_error_text_static"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="錯誤訊息:" />
-
-
-            <TextView
-                android:id="@+id/search_error_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
-
-        </LinearLayout>
 
 
     </LinearLayout>

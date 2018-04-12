@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SearchActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -128,36 +129,37 @@ public class SearchActivity extends AppCompatActivity
         TextView real_quota_text=(TextView) findViewById(R.id.real_quota_text);
         TextView course_time_text=(TextView) findViewById(R.id.course_time_text);
         TextView course_credits_text=(TextView) findViewById(R.id.course_credits_text);
-        TextView search_error_text=(TextView) findViewById(R.id.search_error_text);
+       // TextView search_error_text=(TextView) findViewById(R.id.search_error_text);
         EditText editTextMessage;
         editTextMessage = (EditText) findViewById(R.id.course_input);
         String course = editTextMessage.getText().toString();
 
         //清空
-        sub_name_text.setText("");
-        open_quota_text.setText("");
-        real_quota_text.setText("");
-        course_time_text.setText("");
-        course_credits_text.setText("");
-        search_error_text.setText("");
+        sub_name_text.setText("-");
+        open_quota_text.setText("-");
+        real_quota_text.setText("-");
+        course_time_text.setText("-");
+        course_credits_text.setText("-");
+     //   search_error_text.setText("");
 
 
 
         if (course.length() == 4) {
             Cheakcourse new_course = new Cheakcourse(course);
             if(new_course.getIs_error()){
-                search_error_text.setText(new_course.getError_text());
+                Toast.makeText(this, new_course.getError_text(), Toast.LENGTH_SHORT).show();
+
             } else {
                 sub_name_text.setText(new_course.getSub_name());
                 open_quota_text.setText(new_course.getOpen_quota());
                 real_quota_text.setText(new_course.getReal_quota());
                 course_time_text.setText(new_course.getCourse_time());
                 course_credits_text.setText(new_course.getCourse_credits());
-                search_error_text.setText("");
+
             }
 
         } else {
-            search_error_text.setText("請輸入四碼數字");
+            Toast.makeText(this,"請輸入四碼數字", Toast.LENGTH_SHORT).show();
 
         }
     }
