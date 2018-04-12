@@ -75,7 +75,10 @@ public class Cheakcourse {
             if (e.getMessage().contains("Index 0 out of range")){
                 this.error_text="選課代碼錯誤，查無此課";
                 this.is_error=true;
-            }else {
+            }else if (e.getMessage().contains("End of input at")) {
+                this.error_text="網路連線錯誤";
+                this.is_error=true;
+            } else {
                 this.error_text = e.getMessage();
                 this.is_error = true;
             }
