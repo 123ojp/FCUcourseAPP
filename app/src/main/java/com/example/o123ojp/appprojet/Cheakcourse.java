@@ -21,6 +21,8 @@ public class Cheakcourse {
     private String open_quota;
     private String real_quota;
     private String course_json;
+    private String course_credits;
+    private String course_time;
     private String error_text;
     private boolean is_error= false ;
     //getter
@@ -32,6 +34,12 @@ public class Cheakcourse {
     }
     public String getSub_name(){
         return this.sub_name;
+    }
+    public String getCourse_credits(){
+        return this.course_credits;
+    }
+    public String getCourse_time(){
+        return this.course_time;
     }
     public String getCourse_json(){
         return this.course_json;
@@ -55,6 +63,9 @@ public class Cheakcourse {
             this.sub_name = course_sourse_json_d.getJSONArray("items").getJSONObject(0).getString("sub_name");
             this.open_quota = course_sourse_json_d.getJSONArray("items").getJSONObject(0).getString("scr_precnt");
             this.real_quota = course_sourse_json_d.getJSONArray("items").getJSONObject(0).getString("scr_acptcnt");
+            this.course_credits = course_sourse_json_d.getJSONArray("items").getJSONObject(0).getString("scr_credit");
+            this.course_time = course_sourse_json_d.getJSONArray("items").getJSONObject(0).getString("scr_period");
+
 
         } catch (Exception e) {
             //error_handing.print_error("Error: " + e.getMessage());
@@ -62,7 +73,7 @@ public class Cheakcourse {
             this.open_quota="NULL";
             this.sub_name="NULL";
             if (e.getMessage().contains("Index 0 out of range")){
-                this.error_text="選課代碼錯誤";
+                this.error_text="選課代碼錯誤，查無此課";
                 this.is_error=true;
             }else {
                 this.error_text = e.getMessage();

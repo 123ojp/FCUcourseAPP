@@ -19,17 +19,18 @@
             android:id="@+id/course_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:digits="1234567890"
+            android:ems="10"
+            android:hint="輸入選課代號"
             android:inputType="number"
-            android:maxLength="4"/>
+            android:maxLength="4" />
 
         <Button
             android:id="@+id/查詢"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="searchcourse"
-            android:text="Button"
+            android:text="查詢"
             tools:layout_editor_absoluteX="101dp"
             tools:layout_editor_absoluteY="32dp" />
 
@@ -85,6 +86,44 @@
 
             <TextView
                 android:id="@+id/real_quota_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NULL" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="學分" />
+
+            <TextView
+                android:id="@+id/course_credits_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NULL" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="上課時間/上課教室/授課教師" />
+
+            <TextView
+                android:id="@+id/course_time_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
