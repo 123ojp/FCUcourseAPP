@@ -1,10 +1,12 @@
 package com.example.o123ojp.appprojet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class BookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private EditText etName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,7 @@ public class BookActivity extends AppCompatActivity
         setContentView(R.layout.activity_book);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        etName = (EditText)findViewById(R.id.etName);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +118,32 @@ public class BookActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void turnSearchName(View v){
+        String teaName = etName.getText().toString();
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface di, int i) {
+            }
+        };
+        switch(teaName){
+            case "陳錫民":
+                ad.setTitle("陳錫民");
+                ad.setMessage("[物件導向設計]教概念，不難，可以學到東西，不要想躺著過");
+                break;
+            case "黃溪春":
+                ad.setTitle("黃溪春");
+                ad.setMessage("上很快，以為全班程度都很高\n有點枯燥，但教的還不錯，分數分明");
+                break;
+            default:
+                ad.setTitle("查詢失敗");
+                ad.setMessage("輸入錯誤 or 無資料");
+                break;
+        }
+        ad.setPositiveButton("確定",listener);
+        ad.show();
     }
 
     public void turnBookWeb(View v){
