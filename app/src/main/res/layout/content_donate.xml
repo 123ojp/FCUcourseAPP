@@ -8,4 +8,9 @@
     tools:context="com.example.o123ojp.appprojet.DonateActivity"
     tools:showIn="@layout/app_bar_donate">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/background_resized" />
 </android.support.constraint.ConstraintLayout>

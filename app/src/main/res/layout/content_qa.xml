@@ -8,4 +8,9 @@
     tools:context="com.example.o123ojp.appprojet.QaActivity"
     tools:showIn="@layout/app_bar_qa">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/background_resized" />
 </android.support.constraint.ConstraintLayout>

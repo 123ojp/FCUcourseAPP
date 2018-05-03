@@ -1,6 +1,7 @@
 package com.example.o123ojp.appprojet;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -112,5 +113,13 @@ public class BookActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void turnBookWeb(View v){
+        Uri uri = Uri.parse("http://shakemylife.pixnet.net/blog/post/27321371");
+        Intent intent = new Intent();
+        intent.setAction(intent.ACTION_VIEW);
+        intent.setData(uri);
+        startActivity(intent);
     }
 }
