@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class CheckActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,10 +44,15 @@ public class CheckActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Button btnStart = (Button)findViewById(R.id.btnStartService);
+        Button btnStop = (Button)findViewById(R.id.btnStopService);
+        final TextView tvCourseNum = (TextView)findViewById(R.id.tvCheck);
+
         View.OnClickListener btnOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(CheckActivity.this, CheckService.class);
+                it.putExtra("courseNum", tvCourseNum.getText().toString());
                 switch (view.getId()) {
                     case R.id.btnStartService:
                         startService(it);
@@ -58,8 +64,6 @@ public class CheckActivity extends AppCompatActivity
             }
         };
 
-        Button btnStart = (Button)findViewById(R.id.btnStartService);
-        Button btnStop = (Button)findViewById(R.id.btnStopService);
         btnStart.setOnClickListener(btnOnClickListener);
         btnStop.setOnClickListener(btnOnClickListener);
     }

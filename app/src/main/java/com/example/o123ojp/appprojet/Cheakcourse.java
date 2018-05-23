@@ -45,6 +45,10 @@ public class Cheakcourse {
         return this.course_json;
     }
     public String getError_text(){ return this.error_text;}
+    public void setCourse_num(String course_num) {
+        this.course_num = course_num;
+    }
+
     public boolean getIs_error(){ return this.is_error;}
     public Cheakcourse(String course) {
         this.course_num=course;
@@ -139,9 +143,9 @@ public class Cheakcourse {
 
         this.course_json=output;
     }
-    public boolean whether_if_OKadd(String course){
+    public boolean whether_if_OKadd(){
 
-        if (Integer.parseInt(this.getOpen_quota())>Integer.parseInt(this.getReal_quota())){
+        if (Float.parseFloat(this.open_quota)>Float.parseFloat(this.real_quota)){
             return true;//如果大可以加
         }else{
             return false;
