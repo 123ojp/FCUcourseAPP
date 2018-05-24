@@ -2,6 +2,7 @@ package com.example.o123ojp.appprojet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CheckActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,6 +46,9 @@ public class CheckActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         Button btnStart = (Button)findViewById(R.id.btnStartService);
         Button btnStop = (Button)findViewById(R.id.btnStopService);
         final TextView tvCourseNum = (TextView)findViewById(R.id.tvCheck);
@@ -52,10 +57,22 @@ public class CheckActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(CheckActivity.this, CheckService.class);
-                it.putExtra("courseNum", tvCourseNum.getText().toString());
                 switch (view.getId()) {
                     case R.id.btnStartService:
-                        startService(it);
+                        String courseNum = tvCourseNum.getText().toString();
+                        if (courseNum.length() == 4) {
+                            Cheakcourse course = new Cheakcourse(courseNum);
+                            if (course.getIs_error()) {
+                                Toast.makeText(getApplicationContext(), course.getError_text(), Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                it.putExtra("courseNum", courseNum);
+                                startService(it);
+                            }
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "請輸入四碼數字", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     case R.id.btnStopService:
                         stopService(it);
