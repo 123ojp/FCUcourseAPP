@@ -19,12 +19,14 @@
         android:layout_height="495dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="turnCheck"
             android:text="@string/title_course_alert" />
 
         <TextView
@@ -35,6 +37,7 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="turnBook"
             android:text="@string/title_course_book" />
 
         <TextView
@@ -45,6 +48,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="turnSearch"
             android:text="@string/title_course_search" />
 
         <TextView
@@ -55,6 +59,7 @@
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="turnDonate"
             android:text="@string/title_donate" />
 
         <TextView
@@ -66,6 +71,7 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="turnQa"
             android:text="@string/title_qa" />
 
     </LinearLayout>

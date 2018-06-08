@@ -29,7 +29,8 @@
             android:ems="10"
             android:hint="輸入選課代號"
             android:inputType="number"
-            android:maxLength="4" />
+            android:maxLength="4"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/查詢"

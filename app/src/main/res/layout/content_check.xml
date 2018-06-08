@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="輸入選課代號"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnStartService"

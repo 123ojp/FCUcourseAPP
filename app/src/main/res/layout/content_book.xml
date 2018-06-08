@@ -25,6 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="輸入老師姓名："
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
             tools:layout_editor_absoluteX="97dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -34,7 +36,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="輸入"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_search"

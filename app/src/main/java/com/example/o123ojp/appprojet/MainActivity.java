@@ -112,4 +112,34 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void turnCheck(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,CheckActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+    public void turnBook(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,BookActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+    public void turnSearch(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,SearchActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+    public void turnDonate(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,DonateActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+    public void turnQa(View v){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,QaActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
 }
