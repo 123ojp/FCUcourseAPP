@@ -12,7 +12,7 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/background_resized" />
+        app:srcCompat="@drawable/app2" />
 
     <LinearLayout
         android:layout_width="368dp"

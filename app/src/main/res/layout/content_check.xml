@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_resized" />
+        app:srcCompat="@drawable/app2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
