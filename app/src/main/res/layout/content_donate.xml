@@ -12,5 +12,43 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/app2" />
+        app:srcCompat="@drawable/app2"
+        android:contentDescription="@string/picture"/>
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="256dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ac_donate" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/請從下列選擇一項進行科學運算donate給我們" />
+        <Button
+            android:id="@+id/btn_open_browser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/使用瀏覽器開啟" />
+
+        <Button
+            android:id="@+id/btn_open_act"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/使用內部頁面開啟" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
