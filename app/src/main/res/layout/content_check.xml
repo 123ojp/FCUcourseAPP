@@ -39,12 +39,19 @@
             android:id="@+id/btnStartService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="開始服務" />
+            android:text="開始服務"
+            android:background="@drawable/shape_button"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnStopService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="停止服務" />
+            android:text="停止服務"
+            android:background="@drawable/shape_button"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -39,7 +39,8 @@
             android:onClick="searchcourse"
             android:text="查詢"
             tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="32dp" />
+            tools:layout_editor_absoluteY="32dp"
+            android:background="@drawable/shape_button"/>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -15,4 +15,10 @@
     <string name="title_activity_book">BookActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_qa">QaActivity</string>
+    <string name="使用瀏覽器開啟">使用瀏覽器開啟</string>
+    <string name="使用內部頁面開啟">使用內部頁面開啟</string>
+    <string name="請從下列選擇一項進行科學運算donate給我們">請從下列選擇一項進行科學運算donate給我們</string>
+    <string name="請使用者注意">請使用者注意，進行大量科學運算將會使用較多的資源以及電量。</string>
+    <string name="ac_donate">請使用者注意，長時間請使用AC電源，或是使用桌機運算來donate</string>
+    <string name="picture">picture</string>
 </resources>

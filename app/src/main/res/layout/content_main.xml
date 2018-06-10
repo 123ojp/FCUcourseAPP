@@ -11,8 +11,9 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/app2" />
+        android:layout_height="506dp"
+        app:srcCompat="@drawable/app2"
+        tools:layout_editor_absoluteY="5dp" />
 
     <LinearLayout
         android:layout_width="368dp"
@@ -22,12 +23,18 @@
         tools:layout_editor_absoluteY="8dp"
         tools:ignore="MissingConstraints">
 
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnCheck"
-            android:text="@string/title_course_alert" />
+            android:text="@string/title_course_alert"
+            android:background="@drawable/shape_button"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -38,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnBook"
-            android:text="@string/title_course_book" />
+            android:text="@string/title_course_book"
+            android:background="@drawable/shape_button"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -49,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnSearch"
-            android:text="@string/title_course_search" />
+            android:text="@string/title_course_search"
+            android:background="@drawable/shape_button"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -60,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnDonate"
-            android:text="@string/title_donate" />
+            android:text="@string/title_donate"
+            android:background="@drawable/shape_button"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -72,7 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnQa"
-            android:text="@string/title_qa" />
+            android:text="@string/title_qa"
+            android:background="@drawable/shape_button"/>
 
     </LinearLayout>
 

@@ -44,7 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnSearchName"
-            android:text="查詢" />
+            android:text="查詢"
+            android:background="@drawable/shape_button"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -55,7 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="turnBookWeb"
-            android:text="線上逢甲選課秘笈" />
+            android:text="線上逢甲選課秘笈"
+            android:background="@drawable/shape_button"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
