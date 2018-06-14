@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity
     @SuppressLint("LongLogTag")
     protected void turnQa(View v){
         Log.i("Send email", "");
-        String[] TO = {"zs124927755@gmail.com"};
+        String[] TO = {"d0591821@mail.fcu.edu.tw"};
         String[] CC = {"xyz@gmail.com"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));

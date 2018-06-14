@@ -4,7 +4,8 @@ public class bookMessage {
     private String title;
     private String message;
 
-    public String getTitle() {
+    public String getTitle()
+    {
         return title;
     }
 
