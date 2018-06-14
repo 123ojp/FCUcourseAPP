@@ -44,7 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_button"
-            android:text="@string/使用瀏覽器開啟" />
+            android:text="@string/使用瀏覽器開啟"
+            android:onClick="open_browser"/>
 
         <TextView
             android:id="@+id/textView6"

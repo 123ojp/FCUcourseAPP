@@ -1,6 +1,7 @@
 package com.example.o123ojp.appprojet;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,14 @@ import android.view.MenuItem;
 
 public class DonateActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public void open_browser(View v){
+        Uri uri = Uri.parse("http://machine116688tw.000webhostapp.com/666.html");
+        Intent intent = new Intent();
+        intent.setAction(intent.ACTION_VIEW);
+        intent.setData(uri);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
