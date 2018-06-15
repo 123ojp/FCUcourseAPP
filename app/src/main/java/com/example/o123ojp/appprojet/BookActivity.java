@@ -35,6 +35,7 @@ public class BookActivity extends AppCompatActivity
     private EditText etName;
     private TeacherArrayAdapter adapter = null;
     private List<bookMessage> teachers;
+    private  int total = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +140,6 @@ public class BookActivity extends AppCompatActivity
 
     public void turnSearchName(View v){
         int i = 0;
-        int total = 7;
         String teaName = etName.getText().toString();
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener(){
@@ -147,17 +147,22 @@ public class BookActivity extends AppCompatActivity
             public void onClick(DialogInterface di, int i) {
             }
         };
-        for(i = 0;i <= total;i++){
-            if(teachers.get(i).getTitle().equals(teaName)) {
-                break;
-            }
-        }
-        if(i > total){
+        if(teaName.equals("")){
             ad.setTitle("查詢失敗");
-            ad.setMessage("輸入錯誤 or 無資料");
+            ad.setMessage("輸入格式錯誤");
         }else{
-            ad.setTitle(teachers.get(i).getTitle());
-            ad.setMessage(teachers.get(i).getMessage());
+            for(i = 0;i < total;i++){
+                if(teachers.get(i).getTitle().equals(teaName)) {
+                    break;
+                }
+            }
+            if(i > total){
+                ad.setTitle("查詢失敗");
+                ad.setMessage("輸入錯誤 or 無資料");
+            }else{
+                ad.setTitle(teachers.get(i).getTitle());
+                ad.setMessage(teachers.get(i).getMessage());
+            }
         }
         ad.setPositiveButton("確定",listener);
         ad.show();
@@ -208,6 +213,7 @@ public class BookActivity extends AppCompatActivity
                 ateacher.setMessage(message);
                 lsTeachers.add(ateacher);
                 Log.v("AdoptTeacher",title + ";" + message);
+                total++;
             }
             teachers = lsTeachers;
         }

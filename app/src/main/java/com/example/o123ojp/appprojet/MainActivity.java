@@ -143,24 +143,8 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressLint("LongLogTag")
     protected void turnQa(View v){
-        Log.i("Send email", "");
-        String[] TO = {"d0591821@mail.fcu.edu.tw"};
-        String[] CC = {"xyz@gmail.com"};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.setType("text/plain");
-
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
-
-        try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            finish();
-            Log.i("Finished sending email...", "");
-        }catch(android.content.ActivityNotFoundException ex){
-            Toast.makeText(MainActivity.this,"There is no email client installed.", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this,QaActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 }
