@@ -147,16 +147,16 @@ public class BookActivity extends AppCompatActivity
             public void onClick(DialogInterface di, int i) {
             }
         };
-        if(teaName.equals("")){
+        if(teaName.equalsIgnoreCase("")){
             ad.setTitle("查詢失敗");
             ad.setMessage("輸入格式錯誤");
         }else{
             for(i = 0;i < total;i++){
-                if(teachers.get(i).getTitle().equals(teaName)) {
+                if(teachers.get(i).getTitle().equalsIgnoreCase(teaName)) {
                     break;
                 }
             }
-            if(i > total){
+            if(i >= total){
                 ad.setTitle("查詢失敗");
                 ad.setMessage("輸入錯誤 or 無資料");
             }else{
