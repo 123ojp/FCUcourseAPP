@@ -18,13 +18,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="371dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/tvCheck"
@@ -39,8 +41,8 @@
             android:id="@+id/btnStartService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="開始服務"
-            android:background="@drawable/shape_button"/>
+            android:background="@drawable/shape_button"
+            android:text="開始服務" />
 
         <TextView
             android:id="@+id/textView8"
@@ -51,7 +53,7 @@
             android:id="@+id/btnStopService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="停止服務"
-            android:background="@drawable/shape_button"/>
+            android:background="@drawable/shape_button"
+            android:text="停止服務" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
