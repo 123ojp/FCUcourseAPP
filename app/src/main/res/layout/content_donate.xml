@@ -11,58 +11,70 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/app2"
-        android:contentDescription="@string/picture"/>
+        android:layout_height="0dp"
+        android:contentDescription="@string/picture"
+        app:srcCompat="@drawable/app2" />
 
     <LinearLayout
         android:layout_width="356dp"
         android:layout_height="534dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="16dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ac_donate" />
+            android:text="@string/ac_donate"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="9dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_donate"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="9dp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/請從下列選擇一項進行科學運算donate給我們" />
+            android:text="@string/請從下列選擇一項進行科學運算donate給我們"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="9dp" />
 
         <Button
             android:id="@+id/btn_open_browser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_button"
-            android:text="@string/使用瀏覽器開啟"
-            android:onClick="open_browser"/>
+            android:onClick="open_browser"
+            android:text="@string/使用瀏覽器開啟" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="9dp" />
 
-        <Button
-            android:id="@+id/btn_open_act"
+        <WebView
+            android:id="@+id/webview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_button"
-            android:text="@string/使用內部頁面開啟" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

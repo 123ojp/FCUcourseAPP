@@ -21,4 +21,6 @@
     <string name="請使用者注意">請使用者注意，進行大量科學運算將會使用較多的資源以及電量。</string>
     <string name="ac_donate">請使用者注意，長時間請使用AC電源，或是使用桌機運算來donate</string>
     <string name="picture">picture</string>
+    <string name="wifi_donate">請注意需使用行動網路，可能會產生數據使用，可使用wifi來進行donate</string>
+    <string name="no_hine_cdoe">請注意有些防火牆可能會阻擋，本網頁無任何隱藏代碼</string>
 </resources>

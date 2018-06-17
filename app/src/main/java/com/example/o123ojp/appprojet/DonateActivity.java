@@ -14,20 +14,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class DonateActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public void open_browser(View v){
-        Uri uri = Uri.parse("http://machine116688tw.000webhostapp.com/666.html");
+        Uri uri = Uri.parse("http://machine116688tw.000webhostapp.com/zh_tw/666_2.html");
         Intent intent = new Intent();
         intent.setAction(intent.ACTION_VIEW);
         intent.setData(uri);
         startActivity(intent);
     }
 
+
+    private WebView m_WV;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -50,7 +58,27 @@ public class DonateActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        m_WV = (WebView)findViewById(R.id.webview);
+        WebSettings webSettings = m_WV.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
     }
+
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        String strRbtUrl = "http://machine116688tw.000webhostapp.com/zh_tw/666_2.html";
+        m_WV.loadUrl(strRbtUrl);
+        m_WV.setWebViewClient(new WebViewClient());
+    }
+
+
+
+
 
     @Override
     public void onBackPressed() {
