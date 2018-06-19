@@ -22,7 +22,7 @@ public class DonateActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public void open_browser(View v){
-        Uri uri = Uri.parse("http://machine116688tw.000webhostapp.com/zh_tw/666_2.html");
+        Uri uri = Uri.parse("http://machine116688.000webhostapp.com/666_2.html");
         Intent intent = new Intent();
         intent.setAction(intent.ACTION_VIEW);
         intent.setData(uri);
@@ -71,7 +71,7 @@ public class DonateActivity extends AppCompatActivity
     public void onStart()
     {
         super.onStart();
-        String strRbtUrl = "http://machine116688tw.000webhostapp.com/zh_tw/666_2.html";
+        String strRbtUrl = "http://machine116688.000webhostapp.com/666_2.html";
         m_WV.loadUrl(strRbtUrl);
         m_WV.setWebViewClient(new WebViewClient());
     }
