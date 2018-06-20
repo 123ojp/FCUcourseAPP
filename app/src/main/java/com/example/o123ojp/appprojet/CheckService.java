@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
@@ -28,10 +29,10 @@ public class CheckService extends Service {
             Intent inetnt = new Intent(getApplicationContext(), CheckActivity.class);
             inetnt.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, inetnt, PendingIntent.FLAG_UPDATE_CURRENT);
-            Notification noti = new NotificationCompat.Builder(getApplicationContext(), "default")
+            Notification noti = new NotificationCompat.Builder(getApplicationContext(), "checkService")
                     .setContentTitle(course.getSub_name())
                     .setContentText(nitiText)
-                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setSmallIcon(R.drawable.search)
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(nitiText))
                     .setTicker("開始查詢")
                     .setContentIntent(contentIntent)
@@ -39,10 +40,10 @@ public class CheckService extends Service {
             notimanger.notify(notiId, noti);
             if (course.whether_if_OKadd()) {
                 String notiText = "目前可以加選\n餘額:" + Float.toString(Float.parseFloat(course.getOpen_quota()) - Float.parseFloat(course.getReal_quota()));
-                noti = new NotificationCompat.Builder(getApplicationContext(), "default")
+                noti = new NotificationCompat.Builder(getApplicationContext(), "canAdd")
                         .setContentTitle(course.getSub_name())
                         .setContentText(notiText)
-                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setSmallIcon(R.drawable.search)
                         .setVibrate(new long[]{1000, 1000, 1000, 1000})
                         .setTicker(course.getSub_name() + " 目前可以加選")
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(notiText))
@@ -62,15 +63,26 @@ public class CheckService extends Service {
         StrictMode.setThreadPolicy(policy);
         notimanger = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("default", "ChannelName", NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription("ChannelDescription");
-            notimanger.createNotificationChannel(channel);
+            NotificationChannel channelCheckService = new NotificationChannel("checkService", "CheckService", NotificationManager.IMPORTANCE_DEFAULT);
+            channelCheckService.setDescription("餘額提醒服務");
+            channelCheckService.enableVibration(true);
+            channelCheckService.setVibrationPattern(new long[]{0});
+            channelCheckService.enableLights(false);
+            channelCheckService.setSound(null, null);
+            notimanger.createNotificationChannel(channelCheckService);
+            NotificationChannel channelCanAdd = new NotificationChannel("canAdd", "CanAdd", NotificationManager.IMPORTANCE_DEFAULT);
+            channelCanAdd.setDescription("餘額通知");
+            channelCanAdd.enableVibration(true);
+            channelCanAdd.setVibrationPattern(new long[]{0, 1000, 100, 1000, 100, 1000, 100, 1000, 100, 1000, 100});
+            channelCanAdd.enableLights(true);
+            channelCanAdd.setLightColor(Color.RED);
+            notimanger.createNotificationChannel(channelCanAdd);
         }
 
-        Notification noti = new NotificationCompat.Builder(getApplicationContext(), "default")
+        Notification noti = new NotificationCompat.Builder(getApplicationContext(), "checkService")
                 .setContentTitle("選課提醒")
                 .setContentText("服務開始")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.search)
                 .setTicker("服務開始")
                 .build();
         startForeground(notiId, noti);
