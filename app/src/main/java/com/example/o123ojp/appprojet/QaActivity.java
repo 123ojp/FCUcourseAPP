@@ -131,7 +131,7 @@ public class QaActivity extends AppCompatActivity
     protected void turnemail(View v){
         Log.i("Send email", "");
         String[] TO = {"d0591821@mail.fcu.edu.tw"};
-        String[] CC = {"xyz@gmail.com"};
+        String[] CC = {"w6282280@yahoo.com.tw"};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
