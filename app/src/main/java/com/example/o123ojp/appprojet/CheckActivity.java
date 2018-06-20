@@ -154,7 +154,7 @@ public class CheckActivity extends AppCompatActivity
             share_intent.setAction(Intent.ACTION_SEND);//设置分享行为
             share_intent.setType("text/plain");//设置分享内容的类型
             share_intent.putExtra(Intent.EXTRA_SUBJECT, "分享 逢甲餘額提醒app");//添加分享内容标题
-            share_intent.putExtra(Intent.EXTRA_TEXT, "我發現了一個很棒的apk\n 他可以自動查看課程餘額並提醒你\n ");//添加分享内容
+            share_intent.putExtra(Intent.EXTRA_TEXT, MainActivity.share_detale);//添加分享内容
             //创建分享的Dialog
             share_intent = Intent.createChooser(share_intent, "分享");
             startActivity(share_intent);
