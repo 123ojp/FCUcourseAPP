@@ -127,8 +127,7 @@ public class QaActivity extends AppCompatActivity
         return true;
     }
 
-    @SuppressLint("LongLogTag")
-    protected void turnemail(View v){
+    public void turnemail(View v){
         Log.i("Send email", "");
         String[] TO = {"d0591821@mail.fcu.edu.tw"};
         String[] CC = {"w6282280@yahoo.com.tw"};
@@ -144,7 +143,7 @@ public class QaActivity extends AppCompatActivity
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
             finish();
-            Log.i("Finished sending email...", "");
+            Log.i("Finished sending email", "");
         }catch(android.content.ActivityNotFoundException ex){
             Toast.makeText(QaActivity.this,"There is no email client installed.", Toast.LENGTH_SHORT).show();
         }

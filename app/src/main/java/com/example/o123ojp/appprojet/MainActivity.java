@@ -150,8 +150,7 @@ public class MainActivity extends AppCompatActivity
         MainActivity.this.startActivity(intent);
     }
 
-    @SuppressLint("LongLogTag")
-    protected void turnQa(View v){
+    public void turnQa(View v){
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,QaActivity.class);
         MainActivity.this.startActivity(intent);
