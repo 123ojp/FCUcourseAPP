@@ -1,6 +1,7 @@
 package com.example.o123ojp.appprojet;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,8 +23,10 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static final String share_detale="我發現了一個很棒的apk\n他可以自動查看課程餘額並提醒你\n下載點:https://apk.foxo.tw/fcucourse.php";
+    public static Context context =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -46,6 +49,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        if (SettingfileRW.testconf()==0){
+            Toast.makeText(MainActivity.context,"未設定學期，請先設定", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,SettingActivity.class);
+            MainActivity.this.startActivity(intent);
+        }
     }
 
     @Override
@@ -74,6 +83,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,SettingActivity.class);
+            MainActivity.this.startActivity(intent);
             return true;
         }
 

@@ -24,6 +24,7 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="若您遇到任何問題\n請在此寫信告知"
             android:textSize="28sp" />
 
         <Button

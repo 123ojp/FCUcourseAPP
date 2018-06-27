@@ -25,6 +25,8 @@ public class Cheakcourse {
     private String course_time;
     private String error_text;
     private boolean is_error= false ;
+    private String years = SettingfileRW.readconf("years");
+    private String ss = SettingfileRW.readconf("ss");
     //getter
     public String getOpen_quota(){
         return this.open_quota;
@@ -96,6 +98,13 @@ public class Cheakcourse {
         String output = "";
         URL url;
         HttpURLConnection urlConnection = null;
+
+        if (years == null){
+            years = "107";
+        }
+        if (ss == null){
+            ss = "1";
+        }
         try {
             url = new URL("https://coursesearch03.fcu.edu.tw/Service/Search.asmx/GetType2Result");
 
@@ -105,7 +114,7 @@ public class Cheakcourse {
             urlConnection.setRequestProperty("Accept","application/json");
 
 
-            String postJsonData = "{\"baseOptions\":{\"lang\":\"cht\",\"year\":106,\"sms\":2},\"typeOptions\":{\"code\":{\"enabled\":true,\"value\":\""+course+"\"},\"weekPeriod\":{\"enabled\":false,\"week\":\"*\",\"period\":\"*\"},\"course\":{\"enabled\":false,\"value\":\"\"},\"teacher\":{\"enabled\":false,\"value\":\"\"},\"useEnglish\":{\"enabled\":false},\"specificSubject\":{\"enabled\":false,\"value\":\"1\"}}}";
+            String postJsonData = "{\"baseOptions\":{\"lang\":\"cht\",\"year\":"+years+",\"sms\":"+ss+"},\"typeOptions\":{\"code\":{\"enabled\":true,\"value\":\""+course+"\"},\"weekPeriod\":{\"enabled\":false,\"week\":\"*\",\"period\":\"*\"},\"course\":{\"enabled\":false,\"value\":\"\"},\"teacher\":{\"enabled\":false,\"value\":\"\"},\"useEnglish\":{\"enabled\":false},\"specificSubject\":{\"enabled\":false,\"value\":\"1\"}}}";
 
             //Send post request
             urlConnection.setDoOutput(true);

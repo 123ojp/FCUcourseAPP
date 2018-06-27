@@ -15,6 +15,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
 public class CheckService extends Service {
+    String delay_sec_str = SettingfileRW.readconf("sec");
+    int delay_sec = 10000;
     final int notiId = 10000;
     static int notiIdAdd = 20000;
     Cheakcourse course = null;
@@ -24,6 +26,10 @@ public class CheckService extends Service {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
+
+            if (delay_sec_str!=null){
+                delay_sec=Integer.valueOf(delay_sec_str)*1000;
+            }
             counter++;
             String nitiText = "實收名額/開放名額:\n" + course.getReal_quota() + "/" + course.getOpen_quota() + "\n已查詢次數:" + Integer.toString(counter);
             Intent inetnt = new Intent(getApplicationContext(), CheckActivity.class);
@@ -52,7 +58,7 @@ public class CheckService extends Service {
                 stopSelf();
             }
             course.renew_course();
-            handler.postDelayed(this, 10000);
+            handler.postDelayed(this, delay_sec);
         }
     };
 

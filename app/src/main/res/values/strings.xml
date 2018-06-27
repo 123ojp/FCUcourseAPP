@@ -10,11 +10,12 @@
     <string name="title_donate">donate</string>
     <string name="title_qa">問題回報</string>
     <string name="action_settings">設定</string>
-    <string name="title_activity_donate">DonateActivity</string>
-    <string name="title_activity_check">CheckActivity</string>
-    <string name="title_activity_book">BookActivity</string>
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="title_activity_qa">QaActivity</string>
+    <string name="title_activity_donate">Donate</string>
+    <string name="title_activity_check">餘額提醒</string>
+    <string name="title_activity_book">選課秘笈</string>
+    <string name="title_activity_search">課程查詢</string>
+    <string name="title_activity_qa">問題回報</string>
+    <string name="title_activity_setting">設定</string>
     <string name="使用瀏覽器開啟">使用瀏覽器開啟</string>
     <string name="使用內部頁面開啟">使用內部頁面開啟</string>
     <string name="請從下列選擇一項進行科學運算donate給我們">請從下列選擇一項進行科學運算donate給我們</string>

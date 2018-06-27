@@ -93,6 +93,9 @@ public class BookActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent();
+            intent.setClass(this,SettingActivity.class);
+            this.startActivity(intent);
             return true;
         }
 

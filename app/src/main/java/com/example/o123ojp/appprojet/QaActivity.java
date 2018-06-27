@@ -73,6 +73,9 @@ public class QaActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent();
+            intent.setClass(this,SettingActivity.class);
+            this.startActivity(intent);
             return true;
         }
 
@@ -137,8 +140,8 @@ public class QaActivity extends AppCompatActivity
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Your subject");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "[問題]逢甲選課提醒app");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "請輸入您的問題在這");
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
