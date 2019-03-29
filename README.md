@@ -1,4 +1,6 @@
 # 逢甲選課提醒app
+## 下載地址
+- https://apk.foxo.tw/fcucourse.php
 ## 功能
 ### 餘額提醒
 - 當課程有空位時，以手機提醒
